@@ -1,0 +1,3 @@
+$('.modal').modal();
+$('.modal-title').html('User details');
+$('.modal-body').html('<%= escape_javascript render("show", locals: @user) %>');

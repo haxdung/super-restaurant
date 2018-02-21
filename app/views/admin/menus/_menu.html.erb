@@ -1,0 +1,7 @@
+<tr>
+  <td><%= menu.id %></td>
+  <td><%= link_to menu.name, admin_menu_path(menu.id), remote: true %></td>
+  <td><%= menu.description %></td>
+  <td><%= time_ago_in_words menu.updated_at %></td>
+  <td><%= link_to "delete", admin_menu_path(menu.id), method: :delete, data: {confirm: "you sure?"} %></td>
+</tr>

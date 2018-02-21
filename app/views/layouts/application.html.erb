@@ -9,7 +9,10 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body class="nav-md">
+  <body>
+    <% if (request.env["PATH_INFO"] =~ /\/admin\/*/).nil? %>
+      <%= render "shared/flash" %>
+    <% end %>
     <%= yield %>
   </body>
 </html>

@@ -1,0 +1,29 @@
+<div class="table-responsive">
+  <table class="table table-striped table-hover">
+    <%= image_tag @menu.image.url, class: "center-block image-menu" if @menu.image? %>
+    <tbody id="user-list">
+      <tr>
+        <td class="text-right">ID </td>
+        <td><%= @menu.id %></td>
+      </tr>
+      <tr>
+        <td class="text-right">Name </td>
+        <td><%= @menu.name %></td>
+      </tr>
+      <tr>
+        <td class="text-right">Description</td>
+        <td><%= @menu.description %></td>
+      </tr>
+      <tr>
+        <td class="text-right">Created at </td>
+        <td><%= @menu.created_at %></td>
+      </tr>
+      <tr>
+        <td class="text-right">Updated at </td>
+        <td><%= @menu.updated_at %></td>
+      </tr>
+    </tbody>
+  </table>
+  <%= link_to "edit", edit_admin_menu_path(@menu.id), class: "btn btn-warning", remote: true  %>
+</div>
+

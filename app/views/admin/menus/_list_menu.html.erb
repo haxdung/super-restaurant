@@ -1,0 +1,18 @@
+<div class="table-responsive">
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th><%= sort_link(@q, :id, "ID") %></th>
+        <th><%= sort_link(@q, :name, "Name") %></th>
+        <th>Description</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody id="user-list">
+      <% @menus.each do |menu| %>
+        <%= render menu %>
+      <% end %>
+    </tbody>
+  </table>
+  <%= paginate @menus %>
+</div>

@@ -1,0 +1,38 @@
+<div id="wrapper">
+  <%= render "admin/dashboard/navigation" %>
+  <div id="page-wrapper">
+    <div class="row flash">
+      <%= render "shared/flash" %>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <h1 class="page-header">Filter Users Have <%= @users.size %> Users</h1>
+    </div>
+
+    <div class="row">
+      <div class="col-md-9">
+        <%= link_to "Add new user", new_admin_user_path, class: "btn btn-primary add-new-user",
+          remote: true %>
+      </div>
+      <div class="col-md-3 text-right">
+        <div class="row">
+          <%= search_form_for [:admin, @q], class: "input-group stylish-input-group" do |f| %>
+
+            <%= f.text_field :name_or_email_cont, class: "form-control",
+              placeholder: "Search by name and email..." %>
+            <span class="input-group-addon">
+              <%= f.button raw("<span class='glyphicon glyphicon-search'></span>") %>
+            </span>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-12">
+        <%= render "list_user", locals: @user %>
+      </div>
+    </div>
+  </div>
+  <%= render "shared/modal" %>
+</div>

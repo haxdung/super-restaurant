@@ -1,0 +1,2 @@
+class BookDiningTable < ApplicationRecord
+end

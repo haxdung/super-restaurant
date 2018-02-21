@@ -1,0 +1,2 @@
+$('#errors').html('<%= escape_javascript render("shared/error_messages", object: @user) %>');
+window.location.assign('<%= admin_users_path %>');
